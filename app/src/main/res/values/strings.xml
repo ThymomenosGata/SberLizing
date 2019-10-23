@@ -2,4 +2,22 @@
     <string name="app_name">SberLizing</string>
     <string name="title_calc">Калькулятор</string>
     <string name="title_car">АвтоМол</string>
+    <string name="every_month_pay">Ежемесячный платеж от</string>
+    <string name="rubls">₽</string>
+    <string name="price_assets">Стоимость имущества:</string>
+    <string name="percent">%</string>
+    <string name="min_price">от 500 000 ₽</string>
+    <string name="max_price">до 10 000 000 ₽</string>
+    <string name="min_percent">от 10 %</string>
+    <string name="max_percent">до 49 %</string>
+    <string name="size_avans">Размер аванса:</string>
+    <string name="month">МЕС</string>
+    <string name="min_month">от 12 месяцев</string>
+    <string name="max_month">до 36 месяцев</string>
+    <string name="leasing_term">Срок лизинга:</string>
+    <string name="send">Оставить заявку</string>
+    <string name="name">Фамилия имя отчество</string>
+    <string name="phone_number">Номер телефона</string>
+    <string name="send_email">Отправить</string>
+    <string name="term">Заявка</string>
 </resources>

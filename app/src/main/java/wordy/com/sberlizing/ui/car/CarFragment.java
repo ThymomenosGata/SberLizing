@@ -18,7 +18,6 @@ public class CarFragment extends Fragment {
     private CarViewModel carViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        carViewModel = ViewModelProviders.of(this).get(CarViewModel.class);
         View root = inflater.inflate(R.layout.fragment_car, container, false);
 
         return root;
