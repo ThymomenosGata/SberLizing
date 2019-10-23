@@ -19,14 +19,8 @@ public class CarFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         carViewModel = ViewModelProviders.of(this).get(CarViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_calc, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
-        carViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        View root = inflater.inflate(R.layout.fragment_car, container, false);
+
         return root;
     }
 }

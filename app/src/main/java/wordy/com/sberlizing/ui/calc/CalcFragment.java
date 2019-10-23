@@ -21,14 +21,8 @@ public class CalcFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         calcViewModel =
                 ViewModelProviders.of(this).get(CalcViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_car, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        calcViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        View root = inflater.inflate(R.layout.fragment_calc, container, false);
+
         return root;
     }
 }

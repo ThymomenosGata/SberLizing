@@ -10,7 +10,10 @@ public class CalcViewModel extends ViewModel {
 
     public CalcViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+    }
+
+    public void setText(String text) {
+        mText.setValue(text);
     }
 
     public LiveData<String> getText() {
