@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SberLizing</string>
+    <string name="title_calc">Калькулятор</string>
+    <string name="title_car">АвтоМол</string>
 </resources>
