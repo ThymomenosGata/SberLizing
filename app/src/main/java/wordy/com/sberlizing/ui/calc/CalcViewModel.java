@@ -6,17 +6,18 @@ import androidx.lifecycle.ViewModel;
 
 public class CalcViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
+    private MutableLiveData<CalcModel> calcModel;
 
     public CalcViewModel() {
-        mText = new MutableLiveData<>();
+        calcModel = new MutableLiveData<>();
+        calcModel.setValue(new CalcModel(500000, 10, 12));
     }
 
-    public void setText(String text) {
-        mText.setValue(text);
+    public void setText(CalcModel text) {
+        calcModel.setValue(text);
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<CalcModel> getText() {
+        return calcModel;
     }
 }
