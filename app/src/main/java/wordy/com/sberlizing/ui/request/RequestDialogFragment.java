@@ -68,7 +68,7 @@ public class RequestDialogFragment extends BottomSheetDialogFragment {
             public void onClick(View v) {
                 Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
                 emailIntent.setType("text/html");
-                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"kostaki97@mail.ru"});
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"magdeev.mr@sberleasing.ru"});
                 emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtml(new StringBuilder()
                         .append("<p><b>NAME: ")
                         .append(editName.getText().toString())
