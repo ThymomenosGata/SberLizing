@@ -11,7 +11,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class PortalRest extends Application {
 
     private static SberApi.MarcetplaceApi marcetplaceApi;
-    private Retrofit retrofit;
 
     @Override
     public void onCreate() {
@@ -21,7 +20,7 @@ public class PortalRest extends Application {
                 .setLenient()
                 .create();
 
-        retrofit = new Retrofit.Builder()
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://www.sberleasing.ru")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();

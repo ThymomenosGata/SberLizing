@@ -9,8 +9,8 @@ public class CalcModel implements Parcelable {
     private int percent;
     private int month;
     private int pay;
-    private double finance;
-    private static final double stavka = 0.1865;
+    private float finance;
+    private static final float stavka = 0.1865f;
 
     public CalcModel(int sum, int percent, int month) {
         this.sum = sum;
@@ -84,6 +84,6 @@ public class CalcModel implements Parcelable {
 
     private void newPay() {
         finance = sum - sum * (percent / 100f);
-        pay = (int) (((stavka / 12)*(finance * Math.pow((stavka/12 + 1),month))) / ((Math.pow((stavka/12 + 1),month)) - 1));
+        pay = (int) (((stavka / 12) * (finance * Math.pow((stavka / 12 + 1), month))) / ((Math.pow((stavka / 12 + 1), month)) - 1));
     }
 }

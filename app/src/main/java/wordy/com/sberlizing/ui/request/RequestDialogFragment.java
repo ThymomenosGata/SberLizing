@@ -22,12 +22,8 @@ import wordy.com.sberlizing.ui.calc.CalcModel;
 
 public class RequestDialogFragment extends BottomSheetDialogFragment {
 
-    private CalcModel calcModel;
     private int month, percent, pay;
     private EditText editName, editPhone;
-    private Button send;
-    private ImageButton close;
-    String lastChar = " ";
 
     public static RequestDialogFragment newInstance() {
         return new RequestDialogFragment();
@@ -37,7 +33,7 @@ public class RequestDialogFragment extends BottomSheetDialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Bundle bundle = getArguments();
         if (bundle != null) {
-            calcModel = bundle.getParcelable("request");
+            CalcModel calcModel = bundle.getParcelable("request");
             percent = calcModel.getPercent();
             month = calcModel.getMonth();
             pay = calcModel.getPay();
@@ -52,8 +48,8 @@ public class RequestDialogFragment extends BottomSheetDialogFragment {
 
         editName = root.findViewById(R.id.name);
         editPhone = root.findViewById(R.id.phone_number);
-        close = root.findViewById(R.id.close_button);
-        send = root.findViewById(R.id.send_email);
+        ImageButton close = root.findViewById(R.id.close_button);
+        Button send = root.findViewById(R.id.send_email);
 
 
         close.setOnClickListener(new View.OnClickListener() {

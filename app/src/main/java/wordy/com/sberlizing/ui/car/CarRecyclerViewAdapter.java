@@ -20,7 +20,7 @@ public class CarRecyclerViewAdapter extends RecyclerView.Adapter<CarRecyclerView
     private List<Items> items;
     private Context context;
 
-    public CarRecyclerViewAdapter(Context context, List<Items> items) {
+    CarRecyclerViewAdapter(Context context, List<Items> items) {
         this.items = items;
         this.context = context;
     }
@@ -37,7 +37,7 @@ public class CarRecyclerViewAdapter extends RecyclerView.Adapter<CarRecyclerView
         Items item = items.get(position);
         if (item != null) {
             holder.carModify.setText(item.getProperties().getModification_id());
-            holder.carName.setText(item.getProperties().getMark_id() + " " + item.getProperties().getFolder_id());
+            holder.carName.setText(new StringBuffer().append(item.getProperties().getMark_id()).append(" ").append(item.getProperties().getFolder_id()).toString());
             holder.location.setText(item.getProperties().getCity());
             holder.priceL.setText(String.valueOf(item.getProperties().getLeasing_price()));
             holder.priceFull.setText(String.valueOf(item.getProperties().getPrice()));
@@ -59,7 +59,7 @@ public class CarRecyclerViewAdapter extends RecyclerView.Adapter<CarRecyclerView
         TextView carName, carModify, priceL, priceFull, location;
         ImageView carImage, localImage;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
             carName = itemView.findViewById(R.id.car_name);
             carModify = itemView.findViewById(R.id.car_character);
