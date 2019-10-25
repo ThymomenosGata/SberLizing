@@ -52,10 +52,7 @@ public class CarRecyclerViewAdapter extends RecyclerView.Adapter<CarRecyclerView
 
     @Override
     public int getItemCount() {
-        if (items == null) {
-            return 0;
-        }
-        return items.size();
+        return items == null? 0 : items.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

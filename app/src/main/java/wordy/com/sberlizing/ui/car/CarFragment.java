@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -22,7 +23,6 @@ import wordy.com.sberlizing.ui.retrofitRest.PortalRest;
 
 public class CarFragment extends Fragment {
 
-    private CarViewModel carViewModel;
     private RecyclerView carRecyclView;
     private List<Items> items;
 
@@ -40,13 +40,15 @@ public class CarFragment extends Fragment {
 
         PortalRest.getMarcetplaceApi().getData().enqueue(new Callback<CarInfo>() {
             @Override
-            public void onResponse(Call<CarInfo> call, Response<CarInfo> response) {
-                items.addAll(response.body().getItems());
-                carRecyclView.getAdapter().notifyDataSetChanged();
+            public void onResponse(@NonNull Call<CarInfo> call, @NonNull Response<CarInfo> response) {
+                if (response.body() != null) {
+                    items.addAll(response.body().getItems());
+                    Objects.requireNonNull(carRecyclView.getAdapter()).notifyDataSetChanged();
+                }
             }
 
             @Override
-            public void onFailure(Call<CarInfo> call, Throwable t) {
+            public void onFailure(@NonNull Call<CarInfo> call, @NonNull Throwable t) {
                 Toast.makeText(getContext(), "An error occurred during networking", Toast.LENGTH_SHORT).show();
             }
         });
