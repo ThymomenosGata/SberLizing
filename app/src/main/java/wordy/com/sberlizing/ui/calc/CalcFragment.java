@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
@@ -123,6 +125,7 @@ public class CalcFragment extends Fragment {
                 } else if (sum < 500000) {
                     sum = 500000;
                 }
+                editTextPrice.setText(String.valueOf(sum));
                 seekBarPrice.setProgress(sum - 500000);
                 calcModel.setSum(sum);
             }
@@ -147,6 +150,7 @@ public class CalcFragment extends Fragment {
                 } else if (percent < 10) {
                     percent = 10;
                 }
+                editTextPercent.setText(String.valueOf(percent));
                 seekBarPercent.setProgress(percent - 10);
                 calcModel.setPercent(percent);
             }
@@ -171,6 +175,7 @@ public class CalcFragment extends Fragment {
                 } else if (month < 12) {
                     month = 12;
                 }
+                editTextTerm.setText(String.valueOf(month));
                 seekBarTerm.setProgress(month - 12);
                 calcModel.setMonth(month);
             }
@@ -184,7 +189,7 @@ public class CalcFragment extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putParcelable("request", calcModel);
                 requestDialogFragment.setArguments(bundle);
-                requestDialogFragment.show(getActivity().getSupportFragmentManager(), "");
+                requestDialogFragment.show(Objects.requireNonNull(getActivity()).getSupportFragmentManager(), "");
             }
         });
 

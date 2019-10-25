@@ -20,4 +20,6 @@
     <string name="phone_number">Номер телефона</string>
     <string name="send_email">Отправить</string>
     <string name="term">Заявка</string>
+    <string name="to_month_to_lising">в месяц в лизинг</string>
+    <string name="price_car">цена автомобиля</string>
 </resources>
